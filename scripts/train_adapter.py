@@ -3,6 +3,10 @@
 
 from __future__ import annotations
 
+# TRL 1.x SFTTrainer does not support nn.DataParallel — force single GPU.
+import os as _os
+_os.environ.setdefault("CUDA_VISIBLE_DEVICES", "0")
+
 import argparse
 import json
 from pathlib import Path
@@ -67,6 +71,8 @@ def main() -> None:
         task_type="CAUSAL_LM",
         target_modules=["q_proj", "k_proj", "v_proj", "o_proj", "gate_proj", "up_proj", "down_proj"],
     )
+    steps_per_epoch = max(1, len(train_rows) // (config.per_device_batch_size * config.gradient_accumulation_steps))
+    warmup_steps = max(1, int(config.warmup_ratio * steps_per_epoch * config.epochs))
     training_args = SFTConfig(
         output_dir=config.output_dir,
         num_train_epochs=config.epochs,
@@ -75,8 +81,9 @@ def main() -> None:
         gradient_accumulation_steps=config.gradient_accumulation_steps,
         learning_rate=config.learning_rate,
         lr_scheduler_type="cosine",
-        warmup_ratio=config.warmup_ratio,
-        fp16=True,
+        warmup_steps=warmup_steps,
+        fp16=False,
+        bf16=False,
         optim="paged_adamw_8bit",
         gradient_checkpointing=True,
         max_length=config.max_seq_length,
