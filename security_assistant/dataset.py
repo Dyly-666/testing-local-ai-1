@@ -97,7 +97,7 @@ def quality_issues(record: dict[str, Any]) -> list[QualityIssue]:
     answer = message_text(record, "assistant")
     if len(answer) < 300:
         issues.append(QualityIssue(record_id, "warning", "assistant answer is unusually short"))
-    if re.search(r"(?:password|api[_ -]?key|token)\s*[:=]\s*['\"][^'\"]{8,}", answer, re.I):
+    if re.search(r"\b(?:password|api[_ -]?key|token)\b\s*[:=]\s*['\"][^'\"]{8,}", answer, re.I):
         issues.append(QualityIssue(record_id, "warning", "possible secret-like literal in answer"))
     if "confirmed" in answer.lower() and "evidence" not in answer.lower():
         issues.append(QualityIssue(record_id, "warning", "confirmation language has no evidence qualifier"))

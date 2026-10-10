@@ -97,6 +97,14 @@ All records below were structurally checked and deduplicated, but **none are exp
 | `seed-091-19349d42e4` | web_application_security | general_assessment | validation_planning | needs_expert_review | How do I use PHP stream wrappers to escalate LFI to RCE and read source code? |
 | `seed-092-f704724c29` | web_application_security | ssrf | validation_planning | needs_expert_review | How do I exploit SSRF to access AWS EC2 instance metadata and retrieve IAM credentials? |
 | `seed-093-71f4555fac` | web_application_security | ssrf | validation_planning | needs_expert_review | How do I exploit SSRF against GCP and Azure metadata endpoints, and what filter bypass techniques defeat URL allowlist/blocklist controls? |
+| `seed-094-41d73eee09` | active_directory | active_directory | validation_planning | needs_expert_review | certipy find against CORP.LOCAL showed a template 'UserAuthentication' with ESC1 flagged. I have a domain user account jsmith. Walk me throu |
+| `seed-095-17069a90a7` | active_directory | active_directory | validation_planning | needs_expert_review | I have GenericWrite over a certificate template called 'CorpWebServers' on CA 'corp-DC01-CA' in CORP.LOCAL. How do I exploit AD CS ESC4 to r |
+| `seed-096-760f787f4f` | active_directory | active_directory | validation_planning | needs_expert_review | How do I check for and exploit AD CS ESC6 (EDITF_ATTRIBUTESUBJECTALTNAME2) in CORP.LOCAL? What is the difference between ESC6 and ESC1? |
+| `seed-097-06820c974b` | web_application_security | general_assessment | validation_planning | needs_expert_review | My ESC8 NTLM relay attempt to ADCS failed -- ntlmrelayx connects but the relay does not succeed. What are the prerequisites for ESC8 and wha |
+| `seed-098-4b22baa64f` | web_application_security | general_assessment | validation_planning | needs_expert_review | How do I forge a silver ticket to access an MSSQL service on DB01.CORP.LOCAL? I have the svc-mssql account's NTLM hash from secretsdump. Wha |
+| `seed-099-0e24fb1d55` | web_application_security | general_assessment | validation_planning | needs_expert_review | How do I find and decrypt Group Policy Preferences (GPP) credentials stored in SYSVOL on CORP.LOCAL? I have a standard domain user account. |
+| `seed-100-ad4aabc9e4` | web_application_security | general_assessment | validation_planning | needs_expert_review | I got a low-priv shell on an HTB Windows box (WS01.corp.local). What is my privilege escalation checklist? Give me the exact commands for ea |
+| `seed-101-384b075a30` | active_directory | active_directory | validation_planning | needs_expert_review | certipy find flagged a certificate template as ESC1-vulnerable. My manager says this means we have domain admin access. Is that correct? Wal |
 
 ## Automated warnings
 

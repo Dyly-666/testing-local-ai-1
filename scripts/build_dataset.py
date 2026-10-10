@@ -22,7 +22,11 @@ def main() -> None:
 
     source = Path(args.source)
     raw = read_jsonl(source)
-    extra_names = args.extra_source or (["uncensored_examples.jsonl"] if Path("uncensored_examples.jsonl").exists() else [])
+    default_extras = [
+        name for name in ["uncensored_examples.jsonl", "new_examples_phase2.jsonl"]
+        if Path(name).exists()
+    ]
+    extra_names = args.extra_source or default_extras
     for extra in extra_names:
         raw.extend(read_jsonl(Path(extra)))
     all_sources = [source.name] + [Path(e).name for e in extra_names]

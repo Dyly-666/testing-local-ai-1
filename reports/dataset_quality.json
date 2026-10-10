@@ -1,25 +1,25 @@
 {
   "domain_counts": {
-    "active_directory": 13,
-    "web_application_security": 80
+    "active_directory": 17,
+    "web_application_security": 84
   },
   "issues": [],
   "quality_gate": "blocked_pending_expert_review",
-  "record_count": 93,
+  "record_count": 101,
   "record_split_counts": {
     "test": 10,
-    "train": 67,
+    "train": 75,
     "validation": 16
   },
   "review_status_counts": {
-    "needs_expert_review": 93
+    "needs_expert_review": 101
   },
   "scenario_family_counts": {
     "access_control": 2,
-    "active_directory": 13,
+    "active_directory": 17,
     "authentication": 8,
     "file_handling": 10,
-    "general_assessment": 32,
+    "general_assessment": 36,
     "idor_bola": 4,
     "sql_injection": 11,
     "ssrf": 5,
@@ -28,7 +28,7 @@
   },
   "split_records": {
     "test": 10,
-    "train": 67,
+    "train": 75,
     "validation": 16
   }
 }
