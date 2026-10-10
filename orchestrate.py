@@ -57,11 +57,19 @@ def telegram(msg: str) -> None:
     run(f'hermes notify --channel telegram:{TELEGRAM_CHAT} "{escaped}"')
 
 
-def hermes_q(prompt: str, timeout: int = 300) -> str:
-    """Spawn a fresh hermes session for a reasoning step, return stdout."""
-    escaped = prompt.replace('"', '\\"').replace("'", "'\\''")
+def hermes_q(prompt: str, timeout: int = 300, model: str = "") -> str:
+    """Spawn a fresh hermes session for a reasoning step, return stdout.
+
+    model examples:
+      ""                                      → default (claude-sonnet-4-6)
+      "google/gemini-flash-1.5"               → fast + cheap via OpenRouter
+      "deepseek/deepseek-chat"                → good for structured output
+      "anthropic/claude-opus-4"               → highest quality
+    """
+    escaped = prompt.replace("'", "'\\''")
+    model_flag = f"--provider openrouter --model {model}" if model else ""
     r = subprocess.run(
-        f"hermes chat -q '{escaped}'",
+        f"hermes chat -q $'{escaped}' {model_flag}",
         shell=True, text=True, capture_output=True, timeout=timeout
     )
     return r.stdout.strip()
@@ -229,8 +237,8 @@ Failed questions and missing phrases:
 
 Output only JSONL, no other text."""
 
-    log("Spawning hermes session to generate targeted examples ...")
-    output = hermes_q(prompt, timeout=600)
+    log("Spawning hermes session (gemini-flash) to generate targeted examples ...")
+    output = hermes_q(prompt, timeout=600, model="google/gemini-flash-1.5")
 
     # Extract JSONL lines
     new_examples = []
