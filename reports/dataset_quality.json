@@ -1,0 +1,125 @@
+{
+  "domain_counts": {
+    "active_directory": 5,
+    "web_application_security": 38
+  },
+  "issues": [
+    {
+      "message": "confirmation language has no evidence qualifier",
+      "record_id": "seed-008-641f2d2e0f",
+      "severity": "warning"
+    },
+    {
+      "message": "confirmation language has no evidence qualifier",
+      "record_id": "seed-011-6484cf9bdb",
+      "severity": "warning"
+    },
+    {
+      "message": "confirmation language has no evidence qualifier",
+      "record_id": "seed-012-2dec806c62",
+      "severity": "warning"
+    },
+    {
+      "message": "confirmation language has no evidence qualifier",
+      "record_id": "seed-013-bc8d9d4936",
+      "severity": "warning"
+    },
+    {
+      "message": "confirmation language has no evidence qualifier",
+      "record_id": "seed-016-9dfcb4c706",
+      "severity": "warning"
+    },
+    {
+      "message": "confirmation language has no evidence qualifier",
+      "record_id": "seed-019-07d7affbcf",
+      "severity": "warning"
+    },
+    {
+      "message": "confirmation language has no evidence qualifier",
+      "record_id": "seed-020-25aec4c4e8",
+      "severity": "warning"
+    },
+    {
+      "message": "confirmation language has no evidence qualifier",
+      "record_id": "seed-022-4db6ce0edb",
+      "severity": "warning"
+    },
+    {
+      "message": "confirmation language has no evidence qualifier",
+      "record_id": "seed-023-e8cd6443cb",
+      "severity": "warning"
+    },
+    {
+      "message": "confirmation language has no evidence qualifier",
+      "record_id": "seed-024-d0dc823e34",
+      "severity": "warning"
+    },
+    {
+      "message": "confirmation language has no evidence qualifier",
+      "record_id": "seed-025-8a4975524e",
+      "severity": "warning"
+    },
+    {
+      "message": "confirmation language has no evidence qualifier",
+      "record_id": "seed-027-cbac6097bf",
+      "severity": "warning"
+    },
+    {
+      "message": "confirmation language has no evidence qualifier",
+      "record_id": "seed-030-37810b9e1c",
+      "severity": "warning"
+    },
+    {
+      "message": "confirmation language has no evidence qualifier",
+      "record_id": "seed-031-2cbabfa714",
+      "severity": "warning"
+    },
+    {
+      "message": "confirmation language has no evidence qualifier",
+      "record_id": "seed-032-3749afe16f",
+      "severity": "warning"
+    },
+    {
+      "message": "confirmation language has no evidence qualifier",
+      "record_id": "seed-033-97e6784cca",
+      "severity": "warning"
+    },
+    {
+      "message": "confirmation language has no evidence qualifier",
+      "record_id": "seed-037-8a09a206ed",
+      "severity": "warning"
+    },
+    {
+      "message": "confirmation language has no evidence qualifier",
+      "record_id": "seed-042-5752f600b1",
+      "severity": "warning"
+    }
+  ],
+  "quality_gate": "blocked_pending_expert_review",
+  "record_count": 43,
+  "record_split_counts": {
+    "test": 5,
+    "train": 31,
+    "validation": 7
+  },
+  "review_status_counts": {
+    "needs_expert_review": 43
+  },
+  "scenario_family_counts": {
+    "access_control": 2,
+    "active_directory": 5,
+    "authentication": 5,
+    "file_handling": 5,
+    "general_assessment": 8,
+    "idor_bola": 3,
+    "sql_injection": 5,
+    "ssrf": 2,
+    "web_configuration": 5,
+    "xss": 3
+  },
+  "split_records": {
+    "test": 5,
+    "train": 31,
+    "validation": 7
+  }
+}

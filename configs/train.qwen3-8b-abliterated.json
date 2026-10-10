@@ -1,0 +1,18 @@
+{
+  "base_model": "huihui-ai/Qwen3-8B-abliterated",
+  "train_file": "data/canonical/train.jsonl",
+  "validation_file": "data/canonical/validation.jsonl",
+  "output_dir": "outputs/qwen3-8b-abliterated-security-lora",
+  "max_seq_length": 4096,
+  "epochs": 2,
+  "learning_rate": 0.0001,
+  "per_device_batch_size": 1,
+  "gradient_accumulation_steps": 8,
+  "lora_rank": 32,
+  "lora_alpha": 64,
+  "lora_dropout": 0.05,
+  "seed": 42,
+  "save_steps": 50,
+  "eval_steps": 50,
+  "warmup_ratio": 0.03
+}

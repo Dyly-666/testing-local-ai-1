@@ -1,0 +1,12 @@
+# Reproducible Python package set for CUDA 12.8 / Kaggle-style training images.
+# Install a CUDA-compatible torch wheel separately when not using Kaggle.
+torch==2.11.0
+accelerate==1.12.0
+bitsandbytes==0.50.2
+datasets==4.6.1
+peft==0.18.1
+safetensors==0.7.0
+transformers==5.2.0
+trl==0.27.0
+pytest==9.0.2
+ruff==0.15.0

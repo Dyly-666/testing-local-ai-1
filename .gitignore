@@ -1,0 +1,16 @@
+.env
+.env.*
+!.env.example
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.venv/
+outputs/
+checkpoints/
+adapters/
+data/knowledge_base/*.sqlite3
+data/knowledge_base/imports/
+reports/evaluations/*.json
+kaggle.txt
+*.ipynb_checkpoints

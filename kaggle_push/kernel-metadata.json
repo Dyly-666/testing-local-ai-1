@@ -1,0 +1,14 @@
+{
+  "id": "zgdyz2tla29tamvz/security-assessment-finetuning",
+  "title": "Security Assessment Finetuning",
+  "code_file": "kaggle_finetune.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": true,
+  "accelerator": "gpu",
+  "enable_internet": true,
+  "dataset_sources": [],
+  "competition_sources": [],
+  "kernel_sources": [],
+  "enable_gpu": true
+}

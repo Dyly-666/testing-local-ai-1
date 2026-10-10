@@ -1,0 +1,9 @@
+{
+  "authorized_targets": ["https://staging.example.test", "10.20.30.0/24"],
+  "permitted_categories": ["web_validation", "directory_read_only"],
+  "excluded_targets": ["production.example.test"],
+  "rate_limit": "5 requests/second",
+  "testing_window": "approved-window-only",
+  "stop_conditions": ["service degradation", "unexpected data exposure"],
+  "data_handling": "synthetic test accounts only"
+}
