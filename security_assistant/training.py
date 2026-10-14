@@ -70,7 +70,8 @@ def prompt_completion_rows(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
     prepared = []
     for row in rows:
         question = row["messages"][1]["content"]
-        mode = "active-directory" if row["metadata"]["domain"] == "active_directory" else "web"
+        domain = row.get("metadata", {}).get("domain", "web_application")
+        mode = "active-directory" if domain == "active_directory" else "web"
         # The same prompt builder is used by the local CLI. Empty evidence and
         # references are explicit for seed examples rather than silently absent.
         prepared.append(

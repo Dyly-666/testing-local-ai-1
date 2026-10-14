@@ -19,6 +19,7 @@ from __future__ import annotations
 import json
 import os
 import re
+import shlex
 import subprocess
 import sys
 import time
@@ -52,9 +53,8 @@ def run(cmd: str, **kw) -> subprocess.CompletedProcess:
 
 
 def telegram(msg: str) -> None:
-    """Send a Telegram message via hermes notify."""
-    escaped = msg.replace('"', '\\"')
-    run(f'hermes notify --channel telegram:{TELEGRAM_CHAT} "{escaped}"')
+    """Send a Telegram message via hermes send."""
+    run(f'hermes send {shlex.quote(msg)} -t telegram:{TELEGRAM_CHAT}')
 
 
 def hermes_q(prompt: str, timeout: int = 300, model: str = "") -> str:
