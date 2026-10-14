@@ -2,7 +2,7 @@
   "base_model": "Qwen/Qwen3-8B",
   "train_file": "data/canonical/train.jsonl",
   "validation_file": "data/canonical/validation.jsonl",
-  "output_dir": "/kaggle/working/adapter_v24",
+  "output_dir": "/kaggle/working/adapter_v25",
   "max_seq_length": 2048,
   "epochs": 3,
   "learning_rate": 0.0002,
