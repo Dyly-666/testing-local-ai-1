@@ -68,7 +68,7 @@ def prompt_completion_rows(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
     guessing token offsets for a model-specific chat template.
     """
     prepared = []
-    for row in rows:
+    for i, row in enumerate(rows):
         question = row["messages"][1]["content"]
         domain = row.get("metadata", {}).get("domain", "web_application")
         mode = "active-directory" if domain == "active_directory" else "web"
@@ -78,7 +78,7 @@ def prompt_completion_rows(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
             {
                 "prompt": assessment_prompt(mode, question, "", ""),
                 "completion": [row["messages"][2]],
-                "id": row["id"],
+                "id": row.get("id", f"example_{i}"),
             }
         )
     return prepared
